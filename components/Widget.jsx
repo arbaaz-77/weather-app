@@ -3,7 +3,7 @@ import React from "react";
 
 const Widget = ({ data }) => {
   return (
-    <div className="relative flex flex-col justify-between max-w-[500px] w-full h-[90vh] m-auto p-4 z-10 text-gray-400">
+    <div className="relative flex flex-col gap-32 max-w-[500px] w-full m-auto p-4 z-10 text-gray-400">
       {/* Top */}
       <div className="relative flex justify-between pt-12">
         <div className="flex flex-col items-center">
@@ -19,7 +19,7 @@ const Widget = ({ data }) => {
       </div>
 
       {/* Bottom */}
-      <div className="bg-black/50 relative p-8 rounded-md">
+      <div className="bg-black/50 relative p-3 rounded-md">
         <p className="text-2xl pb-6 text-center">Weather in {data.name}</p>
         <div className="flex justify-between text-center">
           <div>
