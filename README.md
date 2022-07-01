@@ -4,4 +4,4 @@ Using NextJs, TailwindCss & openweather API.
 
 ### Screenshot
 
-![](./screenshot.png)
+![](./weather.png)
