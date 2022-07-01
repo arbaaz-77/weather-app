@@ -1,16 +1,24 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import Widget from "../components/Widget";
 import Spinner from "../components/Spinner";
 
 const Home = () => {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("manchester");
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(false);
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.NEXT_PUBLIC_KEY}`;
+
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setWeather(data);
+      });
+  }, []);
 
   const fetchData = (e) => {
     e.preventDefault();
